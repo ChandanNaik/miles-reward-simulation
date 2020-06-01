@@ -1,0 +1,50 @@
+#title {
+  padding: 20px;
+  background: #ABB0BD;
+  margin-bottom: 20px;
+  z-index: 1;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 15px;
+}
+
+#rewards {
+  padding: 20px;
+  background: #A6D9A6;
+  margin-bottom: 20px;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.categories {
+  padding: 20px;
+  background: #C0D9EB;
+  min-height: 100px;
+  margin-bottom: 20px;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.active {
+  outline: 1px solid red;
+}
+
+.hover {
+  outline: 1px solid blue;
+}
+
+.drop-item {
+  cursor: pointer;
+  margin-bottom: 5px;
+  background-color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radisu: 30px;
+  border: 1px solid rgb(204, 204, 204);
+  position: relative;
+}
+
+.drop-item .remove {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
