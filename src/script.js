@@ -1,3 +1,5 @@
+
+
 $(document).ready(function() {
 
   // .drag specifies all the Rewards in REWARDS BLOCK.
@@ -82,5 +84,4 @@ $(document).ready(function() {
       }
     }
   });
-
 });
