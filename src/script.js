@@ -1,5 +1,3 @@
-
-
 $(document).ready(function() {
 
   // .drag specifies all the Rewards in REWARDS BLOCK.
@@ -17,7 +15,7 @@ $(document).ready(function() {
       buttonText = ui.draggable.text()
       if ($(this).find("." + buttonText).length == 0 && ui.draggable.context.className.includes("ui-draggable")) {
         // Attach reward only if the the reward is coming from Reward bucket
-        attachReward(buttonText,$(this))
+        attachReward(buttonText, $(this))
       }
 
     }
@@ -31,7 +29,7 @@ $(document).ready(function() {
       if ($(this).find("." + buttonText).length == 0 && ui.draggable.context.className.includes("ui-draggable")) {
 
         // Attach reward only if the the reward is coming from Reward bucket
-        attachReward(buttonText,$(this))
+        attachReward(buttonText, $(this))
       }
     }
   });
@@ -43,7 +41,7 @@ $(document).ready(function() {
       buttonText = ui.draggable.text()
       if ($(this).find("." + buttonText).length == 0 && ui.draggable.context.className.includes("ui-draggable")) {
         // Attach reward only if the the reward is coming from Reward bucket
-        attachReward(buttonText,$(this))
+        attachReward(buttonText, $(this))
       }
     }
   });
@@ -52,10 +50,9 @@ $(document).ready(function() {
     hoverClass: 'hover',
     drop: function(e, ui) {
       buttonText = ui.draggable.text()
-      if ($(this).find("." + buttonText).length == 0 && ui.draggable.context.className.includes("ui-draggable"))
-      {
+      if ($(this).find("." + buttonText).length == 0 && ui.draggable.context.className.includes("ui-draggable")) {
         // Attach reward only if the the reward is coming from Reward bucket
-        attachReward(buttonText,$(this))
+        attachReward(buttonText, $(this))
       }
     }
   });
@@ -64,18 +61,16 @@ $(document).ready(function() {
     hoverClass: 'hover',
     drop: function(e, ui) {
       buttonText = ui.draggable.text()
-      if ($(this).find("." + buttonText).length == 0 && ui.draggable.context.className.includes("ui-draggable"))
-      {
+      if ($(this).find("." + buttonText).length == 0 && ui.draggable.context.className.includes("ui-draggable")) {
         // Attach reward only if the the reward is coming from Reward bucket
-        attachReward(buttonText,$(this))
+        attachReward(buttonText, $(this))
       }
     }
   });
 
-  function attachReward(buttonText,$this)
-  {
+  function attachReward(buttonText, $this) {
     // Attaches the dragged reward to the dropped category with a X button.
-    var $rewardButton = $('<div class="'+buttonText+' drop-item">' + buttonText + '</div>');
+    var $rewardButton = $('<div class="' + buttonText + ' drop-item">' + buttonText + '</div>');
     $rewardButton.append($('<button type="button" class="btn btn-default btn-xs remove"><span class="glyphicon glyphicon-remove"></span></button>').click(function() {
       $(this).parent().detach();
     }));
@@ -91,10 +86,15 @@ $(document).ready(function() {
       // This condition is to check when dragging rewards between category
       var innerHTMLString = $(ui.placeholder).parent()[0].innerText
       var draggedRewardClassName = ui.item.context.classList[0];
-      if((innerHTMLString.split(draggedRewardClassName).length - 1) > 1)
-      {
+      if ((innerHTMLString.split(draggedRewardClassName).length - 1) > 1) {
         $(this).sortable('cancel');
       }
     }
   });
+});
+
+
+$(document).on('click', '#reset', function() {
+  location.reload();
+  return false;
 });
